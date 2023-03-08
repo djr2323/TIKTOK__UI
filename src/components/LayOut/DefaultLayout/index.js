@@ -1,13 +1,17 @@
-import Header from './header';
+import Header from '~/components/LayOut/header';
 import Sidebar from './Sidebar';
+import Styles from './DefaultLayout.module.scss';
+import classNames from 'classnames/bind';
+
+const cx = classNames.bind(Styles);
 
 function DefaultLayout({ children }) {
     return (
-        <div>
+        <div className={cx('wrapper')}>
             <Header />
-            <div className="container">
+            <div className={cx('container')}>
                 <Sidebar />
-                <div className="content">{children}</div>
+                <div className={cx('content')}>{children}</div>
             </div>
         </div>
     );
