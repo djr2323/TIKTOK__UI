@@ -17,6 +17,7 @@ function Button({
     rightIcon,
     leftIcon,
     onClick,
+    className,
     ...passProps
 }) {
     let Comp = 'button';
@@ -37,7 +38,7 @@ function Button({
         props.href = href;
         Comp = 'a';
     }
-    const classes = cx('wrapper', { primary, outline, small, text, disabled, rounded, large });
+    const classes = cx('wrapper', { [className]: className, primary, outline, small, text, disabled, rounded, large });
 
     return (
         <Comp className={classes} {...props}>
